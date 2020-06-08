@@ -1,4 +1,4 @@
-package AerialVehicles;
+package AerialVehicles.Interfaces;
 
 import Entities.Coordinates;
 
