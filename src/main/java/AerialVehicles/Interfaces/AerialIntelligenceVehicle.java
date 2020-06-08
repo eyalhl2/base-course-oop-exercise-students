@@ -2,7 +2,7 @@ package AerialVehicles.Interfaces;
 
 import Missions.IntelligenceMission;
 
-public interface AerialIntelligenceVehicle {
+public interface AerialIntelligenceVehicle extends AerialVehicleService {
     default String collectIntelligence() {
         return getPilotName() + ": " + getVehicleName() + " Collecting Data in " + getRegion() + " with sensor type: " + getSensorType();
     }
@@ -11,7 +11,4 @@ public interface AerialIntelligenceVehicle {
 
     String getRegion();
 
-    String getPilotName();
-
-    String getVehicleName();
 }

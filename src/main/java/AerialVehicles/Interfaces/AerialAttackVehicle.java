@@ -1,13 +1,11 @@
 package AerialVehicles.Interfaces;
 
 
-public interface AerialAttackVehicle {
+public interface AerialAttackVehicle extends AerialVehicleService {
 
     default String attack() {
         return getPilotName() + ": " + getVehicleName() + " Attacking " + getTarget() + " with: " + getRocketType() + "X" + getRocketsAmount();
     }
-
-    String getPilotName();
 
     String getTarget();
 
@@ -15,5 +13,4 @@ public interface AerialAttackVehicle {
 
     int getRocketsAmount();
 
-    String getVehicleName();
 }
