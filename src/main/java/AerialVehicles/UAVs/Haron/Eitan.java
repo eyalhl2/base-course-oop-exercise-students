@@ -19,14 +19,34 @@ public class Eitan extends HaronJet implements AerialIntelligenceVehicle, Aerial
         this.sensorType = sensorType;
     }
 
-    @Override
-    public String attack() {
 
-        return super.getPilotName() + ": Eitan Attacking " + ((AttackMission) super.getMission()).getTarget() + " with: " + this.rocketType + "X" + this.rocketsAmount;
+    @Override
+    public String getTarget() {
+        return ((AttackMission)super.getMission()).getTarget();
     }
 
     @Override
-    public String collectIntelligence() {
-        return super.getPilotName() + ": Eitan Collecting Data in " + ((IntelligenceMission) super.getMission()).getRegion() + " with sensor type: " + this.sensorType;
+    public String getRocketType() {
+        return this.rocketType;
+    }
+
+    @Override
+    public int getRocketsAmount() {
+        return this.rocketsAmount;
+    }
+
+    @Override
+    public String getSensorType() {
+        return this.sensorType;
+    }
+
+    @Override
+    public String getRegion() {
+        return ((IntelligenceMission)super.getMission()).getRegion();
+    }
+
+    @Override
+    public String getVehicleName() {
+        return "Eitan";
     }
 }

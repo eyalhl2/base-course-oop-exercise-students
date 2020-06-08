@@ -20,14 +20,32 @@ public class F16 extends FighterJet implements AerialAttackVehicle, AerialBdaVeh
     }
 
     @Override
-    public String attack() {
-
-        return super.getPilotName() + ": F16 Attacking " + ((AttackMission) super.getMission()).getTarget() + " with: " + this.rocketType + "X" + this.rocketsAmount;
+    public String getTarget() {
+        return ((AttackMission)super.getMission()).getTarget();
     }
 
     @Override
-    public String preformBda() {
+    public String getRocketType() {
+        return this.rocketType;
+    }
 
-        return super.getPilotName() + ": F16 taking pictures of " + ((BdaMission) super.getMission()).getObjective() + " with: " + this.cameraType + " camera";
+    @Override
+    public int getRocketsAmount() {
+        return this.rocketsAmount;
+    }
+
+    @Override
+    public String getObjective() {
+        return ((BdaMission)super.getMission()).getObjective();
+    }
+
+    @Override
+    public String getCameraType() {
+        return this.cameraType;
+    }
+
+    @Override
+    public String getVehicleName() {
+        return "F16";
     }
 }

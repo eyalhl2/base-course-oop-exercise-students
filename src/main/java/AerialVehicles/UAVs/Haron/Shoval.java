@@ -11,7 +11,7 @@ public class Shoval extends HaronJet implements AerialIntelligenceVehicle, Aeria
     private int rocketsAmount;
     private String rocketType;
 
-    public Shoval(String cameraType, int rocketsAmount,String rocketType, String sensorType, String pilotName, Mission mission, int hoursSinceLastRepair, boolean readyToFly) {
+    public Shoval(String cameraType, int rocketsAmount, String rocketType, String sensorType, String pilotName, Mission mission, int hoursSinceLastRepair, boolean readyToFly) {
         super(pilotName, mission, hoursSinceLastRepair, readyToFly);
         this.sensorType = sensorType;
         this.cameraType = cameraType;
@@ -20,20 +20,43 @@ public class Shoval extends HaronJet implements AerialIntelligenceVehicle, Aeria
     }
 
     @Override
-    public String attack() {
-
-        return super.getPilotName() + ": Shoval Attacking " + ((AttackMission) super.getMission()).getTarget() + " with: " + this.rocketType + "X" + this.rocketsAmount;
+    public String getTarget() {
+        return ((AttackMission) super.getMission()).getTarget();
     }
 
     @Override
-    public String collectIntelligence() {
-        return super.getPilotName() + ": Shoval Collecting Data in " + ((IntelligenceMission) super.getMission()).getRegion() + " with sensor type: " + this.sensorType;
+    public String getRocketType() {
+        return this.rocketType;
     }
 
     @Override
-    public String preformBda() {
+    public int getRocketsAmount() {
+        return this.rocketsAmount;
+    }
 
-        return super.getPilotName() + ": Shoval taking pictures of " + ((BdaMission) super.getMission()).getObjective() + " with: " + this.cameraType + " camera";
+    @Override
+    public String getSensorType() {
+        return this.sensorType;
+    }
+
+    @Override
+    public String getRegion() {
+        return ((IntelligenceMission) super.getMission()).getRegion();
+    }
+
+    @Override
+    public String getObjective() {
+        return ((BdaMission) super.getMission()).getObjective();
+    }
+
+    @Override
+    public String getCameraType() {
+        return this.cameraType;
+    }
+
+    @Override
+    public String getVehicleName() {
+        return "Shoval";
     }
 }
 

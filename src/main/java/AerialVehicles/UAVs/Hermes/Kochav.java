@@ -20,19 +20,42 @@ public class Kochav extends HermesJet implements AerialAttackVehicle, AerialInte
     }
 
     @Override
-    public String attack() {
-
-        return super.getPilotName() + ": Kochav Attacking " + ((AttackMission) super.getMission()).getTarget() + " with: " + this.rocketType + "X" + this.rocketsAmount;
+    public String getTarget() {
+        return ((AttackMission) super.getMission()).getTarget();
     }
 
     @Override
-    public String collectIntelligence() {
-        return super.getPilotName() + ": Kochav Collecting Data in " + ((IntelligenceMission) super.getMission()).getRegion() + " with sensor type: " + this.sensorType;
+    public String getRocketType() {
+        return this.rocketType;
     }
 
     @Override
-    public String preformBda() {
+    public int getRocketsAmount() {
+        return this.rocketsAmount;
+    }
 
-        return super.getPilotName() + ": Kochav taking pictures of " + ((BdaMission) super.getMission()).getObjective() + " with: " + this.cameraType + " camera";
+    @Override
+    public String getSensorType() {
+        return this.sensorType;
+    }
+
+    @Override
+    public String getRegion() {
+        return ((IntelligenceMission) super.getMission()).getRegion();
+    }
+
+    @Override
+    public String getObjective() {
+        return ((BdaMission) super.getMission()).getObjective();
+    }
+
+    @Override
+    public String getCameraType() {
+        return this.cameraType;
+    }
+
+    @Override
+    public String getVehicleName() {
+        return "Kochav";
     }
 }

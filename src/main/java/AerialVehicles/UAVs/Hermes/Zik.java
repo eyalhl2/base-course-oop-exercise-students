@@ -18,13 +18,27 @@ public class Zik extends HermesJet implements AerialBdaVehicle, AerialIntelligen
     }
 
     @Override
-    public String collectIntelligence() {
-        return super.getPilotName() + ": Zik Collecting Data in " + ((IntelligenceMission) super.getMission()).getRegion() + " with sensor type: " + this.sensorType;
+    public String getSensorType() {
+        return this.sensorType;
     }
 
     @Override
-    public String preformBda() {
+    public String getRegion() {
+        return ((IntelligenceMission) super.getMission()).getRegion();
+    }
 
-        return super.getPilotName() + ": Zik taking pictures of " + ((BdaMission) super.getMission()).getObjective() + " with: " + this.cameraType + " camera";
+    @Override
+    public String getObjective() {
+        return ((BdaMission) super.getMission()).getObjective();
+    }
+
+    @Override
+    public String getCameraType() {
+        return this.cameraType;
+    }
+
+    @Override
+    public String getVehicleName() {
+        return "Zik";
     }
 }

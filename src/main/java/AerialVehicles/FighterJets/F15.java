@@ -20,13 +20,32 @@ public class F15 extends FighterJet implements AerialAttackVehicle, AerialIntell
     }
 
     @Override
-    public String attack() {
-
-        return super.getPilotName() + ": F15 Attacking " + ((AttackMission) super.getMission()).getTarget() + " with: " + this.rocketType + "X" + this.rocketsAmount;
+    public String getTarget() {
+        return ((AttackMission)super.getMission()).getTarget();
     }
 
     @Override
-    public String collectIntelligence() {
-        return super.getPilotName() + ": F15 Collecting Data in " + ((IntelligenceMission) super.getMission()).getRegion() + " with sensor type: " + this.sensorType;
+    public String getRocketType() {
+        return this.rocketType;
+    }
+
+    @Override
+    public int getRocketsAmount() {
+        return this.rocketsAmount;
+    }
+
+    @Override
+    public String getSensorType() {
+        return this.sensorType;
+    }
+
+    @Override
+    public String getRegion() {
+        return ((IntelligenceMission)super.getMission()).getRegion();
+    }
+
+    @Override
+    public String getVehicleName() {
+        return "F15";
     }
 }
